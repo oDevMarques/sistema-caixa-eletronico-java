@@ -23,6 +23,7 @@ public class CaixaTeste {
         boolean resultadoSaque = conta1.sacar(200.00, caixa1);
         System.out.println("Saque efetuado: " + resultadoSaque);
         System.out.println("Saldo após saque: " + conta1.saldo);
+        caixa1.exibirMenu(conta1);
 
 
     }
