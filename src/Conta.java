@@ -42,5 +42,9 @@ public class Conta {
             return false;
         }
     }
+    public void depositar(double totalDeposito) {
+        saldo = saldo + totalDeposito;
+
+    }
 }
 
