@@ -4,21 +4,30 @@ public class CaixaEletronico {
     double valorMinimoSaque;
     boolean ocupado;
 
+    Conta[] contas = new Conta[3];
+
     public CaixaEletronico(double saldoDisponivel, double valorMinimoSaque) {
         this.saldoDisponivel = saldoDisponivel;
         this.valorMinimoSaque = valorMinimoSaque;
         this.ocupado = false;
     }
-    public void exibirMenu(Conta conta) {
+    public void exibirMenu() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite seu login: ");
         String loginDigitado = scanner.next();
+        Conta contaEncontrada = null;
 
-        if (loginDigitado.equals(conta.login)) {
+        for (int i = 0; i < contas.length; i++) {
+            if (contas[i] != null && contas[i].login.equals(loginDigitado)){
+                contaEncontrada = contas[i];
+            }
+        }
+
+        if (contaEncontrada != null) {
             System.out.println("Ola insira sua senha:");
             String senhaDigitada = scanner.next();
-            if (conta.verificarSenha(senhaDigitada)) {
+            if (contaEncontrada.verificarSenha(senhaDigitada)) {
                 int opcao = 0;
                 while (opcao != 4) {
                     System.out.println("=== CAIXA ELETRÔNICO ===");
@@ -29,14 +38,14 @@ public class CaixaEletronico {
                     opcao = scanner.nextInt();
                     switch (opcao) {
                         case 1:
-                            System.out.println("Saldo: " + conta.saldo);
+                            System.out.println("Saldo: " + contaEncontrada.saldo);
                             break;
                         case 2:
                             System.out.println("Digite o valor: ");
                             double valor = scanner.nextDouble();
-                            boolean sacou = conta.sacar(valor, this);
+                            boolean sacou = contaEncontrada.sacar(valor, this);
                             if (sacou) {
-                                System.out.println("Saque realizado! Saldo atual: " + conta.saldo);
+                                System.out.println("Saque realizado! Saldo atual: " + contaEncontrada.saldo);
                             }
 
                             break;
@@ -52,8 +61,8 @@ public class CaixaEletronico {
                                     System.out.println("Total insrido: " + totalDeposito);
                                 }
                             }
-                            conta.depositar(totalDeposito);
-                            System.out.println("Depósito realizado! Saldo atual: " + conta.saldo);
+                            contaEncontrada.depositar(totalDeposito);
+                            System.out.println("Depósito realizado! Saldo atual: " + contaEncontrada.saldo);
                             break;
                         case 4:
                             System.out.println("Encerrando...");
