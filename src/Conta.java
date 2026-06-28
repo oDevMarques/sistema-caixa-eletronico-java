@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Conta {
     String titular;
     String login;
@@ -5,6 +7,8 @@ public class Conta {
     double saldo;
     int tentativas;
     boolean bloqueada;
+
+    ArrayList<String> extrato = new ArrayList<>();
 
     public Conta(String titular, String login, String senha, double saldo) {
         this.titular = titular;
@@ -36,6 +40,7 @@ public class Conta {
             return false;
         } else if (saldoDigitado <= saldo) {
            saldo = saldo - saldoDigitado;
+           extrato.add("Saque realizado no valor de:" + saldoDigitado);
             return true;
         } else {
             System.out.println("Saldo incompatível.");
@@ -44,7 +49,14 @@ public class Conta {
     }
     public void depositar(double totalDeposito) {
         saldo = saldo + totalDeposito;
+        extrato.add("Deposito realizado no valor de:"+ totalDeposito);
 
+    }
+    public void verExtrato(){
+        for (int i = 0; i < extrato.size(); i++){
+            System.out.println(extrato.get(i));
+
+        }
     }
 }
 
