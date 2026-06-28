@@ -13,9 +13,11 @@ Sistema simulando operações de um caixa eletrônico, desenvolvido em Java com 
 - Login com verificação de usuário
 - Menu interativo com Scanner
 - Consulta de saldo
+- Depósito
 
 ## 🚧 Em desenvolvimento
-- Depósito
+- Múltiplas contas
+- Histórico de transações
 
 ## 👨‍💻 Autor
 Anthony Marques — [LinkedIn](https://www.linkedin.com/in/anthony-marques-2145771b9/) | [GitHub](https://github.com/oDevMarques)
