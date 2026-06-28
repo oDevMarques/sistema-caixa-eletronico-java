@@ -24,7 +24,7 @@ public class CaixaEletronico {
 
 
             for (int i = 0; i < contas.length; i++) {
-                if (contas[i] != null && contas[i].login.equals(loginDigitado)) {
+                if (contas[i] != null && contas[i].getLogin().equals(loginDigitado)) {
                     contaEncontrada = contas[i];
                 }
             }
@@ -47,14 +47,14 @@ public class CaixaEletronico {
                         opcao = scanner.nextInt();
                         switch (opcao) {
                             case 1:
-                                System.out.println("Saldo: " + contaEncontrada.saldo);
+                                System.out.println("Saldo: " + contaEncontrada.getSaldo());
                                 break;
                             case 2:
                                 System.out.println("Digite o valor: ");
                                 double valor = scanner.nextDouble();
                                 boolean sacou = contaEncontrada.sacar(valor, this);
                                 if (sacou) {
-                                    System.out.println("Saque realizado! Saldo atual: " + contaEncontrada.saldo);
+                                    System.out.println("Saque realizado! Saldo atual: " + contaEncontrada.getSaldo());
                                 }
 
                                 break;
@@ -71,7 +71,7 @@ public class CaixaEletronico {
                                     }
                                 }
                                 contaEncontrada.depositar(totalDeposito);
-                                System.out.println("Depósito realizado! Saldo atual: " + contaEncontrada.saldo);
+                                System.out.println("Depósito realizado! Saldo atual: " + contaEncontrada.getSaldo());
                                 break;
                             case 4:
                                 contaEncontrada.verExtrato();

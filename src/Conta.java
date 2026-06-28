@@ -1,14 +1,25 @@
 import java.util.ArrayList;
 
 public class Conta {
-    String titular;
-    String login;
-    String senha;
-    double saldo;
-    int tentativas;
-    boolean bloqueada;
+    private String titular;
+    private String login;
+    private String senha;
+    private double saldo;
+    private int tentativas;
+    private boolean bloqueada;
+    private ArrayList<String> extrato = new ArrayList<>();
 
-    ArrayList<String> extrato = new ArrayList<>();
+    public double getSaldo() {
+        return saldo;
+    }
+    public String getLogin() {
+        return login;
+    }
+    public ArrayList<String> getExtrato() {
+        return extrato;
+    }
+
+
 
     public Conta(String titular, String login, String senha, double saldo) {
         this.titular = titular;
