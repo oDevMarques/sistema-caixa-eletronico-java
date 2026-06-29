@@ -12,6 +12,9 @@ public class Conta {
     public double getSaldo() {
         return saldo;
     }
+    public void setSaldo(double novoSaldo) {
+        this.saldo = novoSaldo;
+    }
     public String getLogin() {
         return login;
     }

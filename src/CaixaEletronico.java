@@ -4,7 +4,7 @@ public class CaixaEletronico {
     double valorMinimoSaque;
     boolean ocupado;
 
-    Conta[] contas = new Conta[3];
+    Conta[] contas = new Conta[4];
 
     public CaixaEletronico(double saldoDisponivel, double valorMinimoSaque) {
         this.saldoDisponivel = saldoDisponivel;

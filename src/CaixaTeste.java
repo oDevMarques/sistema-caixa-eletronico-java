@@ -4,6 +4,7 @@ public class CaixaTeste {
         caixa1.contas[0] = new Conta("Anthony Marques", "Tony", "010101", 5000.00);
         caixa1.contas[1] = new Conta("Lavinia Oliveira", "Lavinia", "020202", 4000.00);
         caixa1.contas[2] = new Conta("Alicia Marques", "Alicia", "030303", 3000.00);
+        caixa1.contas[3] = new ContaCorrente ("Lais Evelyn", "Lala", "040404", 5000.00, 900);
         caixa1.exibirMenu();
 
 
