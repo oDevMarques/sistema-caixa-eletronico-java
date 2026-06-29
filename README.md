@@ -17,9 +17,10 @@ Sistema simulando operações de um caixa eletrônico, desenvolvido em Java com 
 - Múltiplas contas
 - Histórico de transações
 - private + getters/setters
+- Herança
 
 ## 🚧 Em desenvolvimento
-- Herança e interfaces
+- interfaces
 - Exceções
 - Collections
 - SQL/JDBC
